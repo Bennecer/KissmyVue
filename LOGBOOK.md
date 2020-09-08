@@ -14,7 +14,7 @@ Bienvenue dans mon carnet de bord pour le test frontend de kiss my !
 #### **08/09/2020 - 10:19**
 Re re relecture des instructions, choix api, première réflexion de la structure sur papier.
 
-#### **08/09/202 - 10:30**
+#### **08/09/2020 - 10:30**
 Je choisis de prendre l'api spoonacular pour récupérer des recettes. Le lien ici : https://spoonacular.com/
 J'ai réfléchi sur papier comment je voulais procéder :
 * Créer les vues et set le router dans un premier temps
@@ -27,5 +27,8 @@ J'ai réfléchi sur papier comment je voulais procéder :
 
 ### Développement
 
-#### **08/09/202 - 10:36**
+#### **08/09/2020 - 10:36**
 Premier commit, c'est parti !
+
+#### **08/09/2020 - 10:36**
+Je viens de simplement créer les vues. Je suis plutôt confiante pour l'instant.
