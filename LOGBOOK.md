@@ -15,7 +15,7 @@ Bienvenue dans mon carnet de bord pour le test frontend de kiss my !
 Re re relecture des instructions, choix api, première réflexion de la structure sur papier.
 
 #### **08/09/2020 - 10:30**
-Je choisis de prendre l'api spoonacular pour récupérer des recettes. Le lien ici : https://spoonacular.com/
+Je choisis de prendre l'api spoonacular pour récupérer des recettes. Le lien ici : https://spoonacular.com/food-api
 J'ai réfléchi sur papier comment je voulais procéder :
 * Créer les vues et set le router dans un premier temps
 * En ce qui concerne le contenu :
@@ -107,3 +107,14 @@ Ok C'est corrigé, je passe à la page d'accueil.
 
 #### **08/09/2020 - 17:34**
 La page d'accueil et le footer ont été ajouté ! Je vais maintenant procéder au rendu. Je n'ai jamais essayé Docker mais je vais essayer.
+
+#### **08/09/2020 - 17:45**
+Après avoir refait le tour de l'application, je me rends compte que j'ai oublié de faire les notifications lorsqu'il y a un ajout aux favoris et de gérer pour ajouter ou retirer sur la page détails + problème de footer. Je le fais de suite.
+
+#### **08/09/2020 - 18:30**
+C'est dommage, je viens de découvrir vuetify et c'est très pratique ! J'aurais pu gagner du temps. Du coup j'ai un petit mix de bootstrap et de vuetify (et je m'en excuse) pour avoir testé les deux. Mais c'est bon tout est terminé !
+
+### Conclusion
+C'était dans tous les cas un exercice très intéressant. Au moment où j'écris, Docker est en train de s'installer. Je vous enverrai un mail lorsque je vous partagerai le repo ! Et s'il y a une erreur 402 pour l'api, n'hésitez pas à me contacter. Sinon il suffit de se créer un compte sur spoonacular api, d'aller dans profile et de récupérer une ouvelle api key.
+
+## Merci !

@@ -28,6 +28,36 @@
         <a @click="goNext()" aria-hidden="true">&raquo;</a>
       </a>
     </div>
+    <button @click="toggleFavorite(); snackbarAdd = true"
+        v-if="!isRecipeFavorite" class="btn btn-warning mt-2">Ajouter aux favoris</button>
+    <button @click="toggleFavorite(); snackbarRemove = true"
+      v-else class="btn btn-danger mt-2">Retirer des favoris</button>
+    <v-snackbar v-model="snackbarAdd">
+      Recette ajoutée aux favoris !
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="pink"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Fermer
+        </v-btn>
+      </template>
+    </v-snackbar>
+    <v-snackbar v-model="snackbarRemove">
+      Recette supprimée des favoris !
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="pink"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Fermer
+        </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 <script>
@@ -52,6 +82,9 @@ export default {
       isLast: false,
       prevRecipe: undefined,
       NextRecipe: undefined,
+      isRecipeFavorite: this.isFavorite,
+      snackbarAdd: false,
+      snackbarRemove: false,
     };
   },
   methods: {
@@ -63,9 +96,15 @@ export default {
       this.currentRecipe = this.nextRecipe;
       this.refresh();
     },
+    toggleFavorite() {
+      const payload = this.recipe;
+      if (this.isRecipeFavorite) store.commit('removeFavorites', { payload });
+      else store.commit('addFavorites', { payload });
+      this.isRecipeFavorite = !this.isRecipeFavorite;
+    },
     refresh() {
       //  To set the arrows
-      if (!this.isFavorite) {
+      if (!this.isRecipeFavorite) {
         const index = this.recipes.findIndex((obj) => obj.id === this.currentRecipe.id);
         if (index === 0) this.isFirst = true;
         else {
@@ -81,7 +120,7 @@ export default {
           recipes: this.recipes,
           favorites: this.favorites,
           currentRecipe: this.currentRecipe,
-          isFavorite: this.isFavorite,
+          isRecipeFavorite: this.isRecipeFavorite,
         };
         JSON.parse(localStorage.getItem('details'));
         localStorage.setItem('details', JSON.stringify(details));
@@ -101,7 +140,7 @@ export default {
           recipes: this.recipes,
           favotites: this.favorites,
           currentRecipe: this.currentRecipe,
-          isFavorite: this.isFavorite,
+          isRecipeFavorite: this.isRecipeFavorite,
         };
         JSON.parse(localStorage.getItem('details'));
         localStorage.setItem('details', JSON.stringify(details));
@@ -121,11 +160,11 @@ export default {
       const getDetails = JSON.parse(localStorage.getItem('details'));
       this.currentRecipe = getDetails.currentRecipe;
       this.recipes = getDetails.recipes;
-      this.isFavorite = getDetails.isFavorite;
+      this.isRecipeFavorite = getDetails.isRecipeFavorite;
       this.favorites = getDetails.favorites;
     }
     axios
-      .get(`https://api.spoonacular.com/recipes/${this.currentRecipe.id}/information?&apiKey=77b59e30cbfc48ee86936d91ffd0d2db`)
+      .get(`https://api.spoonacular.com/recipes/${this.currentRecipe.id}/information?&apiKey=f054396c469d420383f11fb458da02f9`)
       .then((response) => {
         this.recipeDetails = response.data;
         this.refresh();

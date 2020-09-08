@@ -8,7 +8,7 @@
         </Recipe>
       </div>
     </div>
-    <button @click="loadMore" v-if="numberRecipes!==100" style="margin-bottom: 140px;"
+    <button @click="loadMore" v-if="numberRecipes!==100"
     type="button" class="btn btn-primary btn-lg mt-4">Charger de nouveaux éléments</button>
   </div>
 </template>
@@ -34,7 +34,7 @@ export default {
       if (this.numberRecipes < this.maxRecipes) {
         this.numberRecipes += 10;
         axios
-          .get(`https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=${this.numberRecipes}&apiKey=77b59e30cbfc48ee86936d91ffd0d2db`)
+          .get(`https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=${this.numberRecipes}&apiKey=f054396c469d420383f11fb458da02f9`)
           .then((response) => {
             const payload = response.data.results;
             this.recipes = payload;
@@ -45,7 +45,7 @@ export default {
   },
   mounted() {
     axios
-      .get('https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=10&apiKey=77b59e30cbfc48ee86936d91ffd0d2db')
+      .get('https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=10&apiKey=f054396c469d420383f11fb458da02f9')
       .then((response) => {
         const payload = response.data.results;
         this.recipes = payload;
