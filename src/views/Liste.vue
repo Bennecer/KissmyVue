@@ -51,6 +51,10 @@ export default {
         this.recipes = payload;
         store.commit('setRecipes', { payload });
       });
+    const lsFavorites = JSON.parse(localStorage.getItem('favorites'));
+    if (lsFavorites) {
+      store.commit('setFavorites', { lsFavorites });
+    }
   },
 };
 </script>

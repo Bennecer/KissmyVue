@@ -8,7 +8,24 @@
     <router-view/>
   </div>
 </template>
+<script>
+import store from './store';
 
+export default {
+  data() {
+    return {
+    };
+  },
+  methods: {
+  },
+  mounted() {
+    const lsFavorites = JSON.parse(localStorage.getItem('favorites'));
+    if (lsFavorites) {
+      store.commit('setFavorites', { lsFavorites });
+    }
+  },
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

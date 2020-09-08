@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import store from '../../store';
+
 export default {
   name: 'Recipe',
   props: {
@@ -22,12 +24,20 @@ export default {
   data() {
     return {
       isFavorite: false,
+      favorites: store.getters.getFavorites,
     };
   },
   methods: {
     toggleFavorite() {
+      const payload = this.recipe;
+      if (this.isFavorite) store.commit('removeFavorites', { payload });
+      else store.commit('addFavorites', { payload });
       this.isFavorite = !this.isFavorite;
     },
+  },
+  mounted() {
+    this.favorites = store.getters.getFavorites;
+    this.isFavorite = this.favorites.includes(this.recipe);
   },
 };
 </script>
