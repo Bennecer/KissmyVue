@@ -30,5 +30,21 @@ J'ai réfléchi sur papier comment je voulais procéder :
 #### **08/09/2020 - 10:36**
 Premier commit, c'est parti !
 
-#### **08/09/2020 - 10:36**
-Je viens de simplement créer les vues. Je suis plutôt confiante pour l'instant.
+#### **08/09/2020 - 10:42**
+Je viens de simplement créer les vues. Je suis plutôt confiante pour l'instant. Je vais maintenant essayer de récupérer les données de l'API sur la page Liste.
+
+#### **08/09/2020 - 10:48**
+J'ai eu un appel important, je reprends (10:52)
+
+#### **08/09/2020 - 10:56**
+J'ai installé Axios pour les appels et Bootstrap pour un meilleur rendu.
+
+#### **08/09/2020 - 11:09**
+Je constate qu'il n'y a pas de pagination et que la requête est limitée à 100 recettes à la fois. Je ferai avec.
+Je regrette tellement de ne pas avoir de deuxième écran pour ce test :(
+
+#### **08/09/2020 - 11:13**
+Pour le soucis de pagination, je vais faire une requête de 10 recettes et si je clique sur un bouton pour obetnir plus de recettes, j'appellerai cette fois 20, puis 30, etc.
+
+#### **08/09/2020 - 11:20**
+Ok j'ai donc décidé de récupérer des recettes de pasta. L'appel fonctionne bien et je récupère les recettes. Elles se display bien. Maitenant je vais créer un composant "card" réutilisable.
