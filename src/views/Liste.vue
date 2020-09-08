@@ -8,12 +8,13 @@
         </Recipe>
       </div>
     </div>
-    <button @click="loadMore"
+    <button @click="loadMore" v-if="numberRecipes!==100"
     type="button" class="btn btn-primary btn-lg mt-4">Charger de nouveaux éléments</button>
   </div>
 </template>
 <script>
 import axios from 'axios';
+import store from '../store';
 import Recipe from '../components/Liste/Recipe.vue';
 
 export default {
@@ -35,8 +36,9 @@ export default {
         axios
           .get(`https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=${this.numberRecipes}&apiKey=e69a8c024cf84245b7ff80de5079c78d`)
           .then((response) => {
-            console.log(response);
-            this.recipes = response.data.results;
+            const payload = response.data.results;
+            this.recipes = payload;
+            store.commit('addRecipes', { payload });
           });
       }
     },
@@ -45,8 +47,9 @@ export default {
     axios
       .get('https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=10&apiKey=e69a8c024cf84245b7ff80de5079c78d')
       .then((response) => {
-        console.log(response.data.results);
-        this.recipes = response.data.results;
+        const payload = response.data.results;
+        this.recipes = payload;
+        store.commit('setRecipes', { payload });
       });
   },
 };
