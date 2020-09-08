@@ -51,3 +51,6 @@ Ok j'ai donc décidé de récupérer des recettes de pasta. L'appel fonctionne b
 
 #### **08/09/2020 - 11:36**
 Le composant que j'ai nommé Recipe fonctionne bien, je commit et je passe à la pagination. Pour l'instant j'avance bien, je suis contente.
+
+#### **08/09/2020 - 11:45**
+Le chargement de nouveaux éléments fonctionne. Par contre j'ai un problème de cookie, il faudrait que je rajoute un attribut SameSite. Je n'ai jamais rencontré cette erreur dans ma vie de développeuse. J'essaierai de le corriger à la fin du test, pour l'instant je continue. D'ailleurs maintenant je vais m'intéresser au store pour stocker mes recettes.

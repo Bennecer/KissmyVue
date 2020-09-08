@@ -8,6 +8,8 @@
         </Recipe>
       </div>
     </div>
+    <button @click="loadMore"
+    type="button" class="btn btn-primary btn-lg mt-4">Charger de nouveaux éléments</button>
   </div>
 </template>
 <script>
@@ -22,7 +24,22 @@ export default {
   data() {
     return {
       recipes: [],
+      maxRecipes: 100,
+      numberRecipes: 10,
     };
+  },
+  methods: {
+    loadMore() {
+      if (this.numberRecipes < this.maxRecipes) {
+        this.numberRecipes += 10;
+        axios
+          .get(`https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=${this.numberRecipes}&apiKey=e69a8c024cf84245b7ff80de5079c78d`)
+          .then((response) => {
+            console.log(response);
+            this.recipes = response.data.results;
+          });
+      }
+    },
   },
   mounted() {
     axios
