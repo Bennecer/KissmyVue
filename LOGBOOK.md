@@ -87,3 +87,9 @@ Il y a une erreur qui me semble incohérente. Elle me dit que certaines informat
 
 #### **08/09/2020 - 15:05**
 J'ai fini d'entrer les détails de recette que je souhaitais voir affichés. Maintenant je vais faire en sorte de pouvoir naviguer entre les recettes.
+
+#### **08/09/2020 - 15:21**
+J'ai encore un problème d'accès à l'api, trop de requêtes, je recommence ma manip. N'hsitez pas à m'appeler si le problème réitère quand je vous enverrai le test !
+
+#### **08/09/2020 - 15:30**
+La navigation fonctionne correctement. On peut naviguer de recette en recette et on peut raffraichir la page car les dernières données sont stockées en localstorage.

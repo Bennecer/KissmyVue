@@ -4,7 +4,11 @@
     <div class="card-body">
       <h5 class="card-title">{{recipe.title}}</h5>
       <router-link :to="{ name: 'Details', params: { recipe } }"
-      class="btn btn-info stretched-link">Plus de détails</router-link>
+      class="btn btn-info">Plus de détails</router-link>
+      <button @click="toggleFavorite"
+        v-if="!isFavorite" class="btn btn-warning mt-2">Ajouter aux favoris</button>
+      <button @click="toggleFavorite"
+        v-else class="btn btn-danger mt-2">Retirer des favoris</button>
     </div>
   </div>
 </template>
@@ -14,6 +18,16 @@ export default {
   name: 'Recipe',
   props: {
     recipe: Object,
+  },
+  data() {
+    return {
+      isFavorite: false,
+    };
+  },
+  methods: {
+    toggleFavorite() {
+      this.isFavorite = !this.isFavorite;
+    },
   },
 };
 </script>
