@@ -48,3 +48,6 @@ Pour le soucis de pagination, je vais faire une requête de 10 recettes et si je
 
 #### **08/09/2020 - 11:20**
 Ok j'ai donc décidé de récupérer des recettes de pasta. L'appel fonctionne bien et je récupère les recettes. Elles se display bien. Maitenant je vais créer un composant "card" réutilisable.
+
+#### **08/09/2020 - 11:36**
+Le composant que j'ai nommé Recipe fonctionne bien, je commit et je passe à la pagination. Pour l'instant j'avance bien, je suis contente.

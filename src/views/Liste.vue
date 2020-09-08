@@ -1,17 +1,23 @@
 <template>
   <div class="liste container">
     <h1>Voici une liste de recettes</h1>
-    <div class="card" v-for="(recipe, index) in recipes" :key="index">
-      <p>{{recipe.title}}</p>
+    <div class="row mt-5">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 col-12 p-1"
+            v-for="(recipe, index) in recipes" :key="index">
+        <Recipe :recipe="recipe">
+        </Recipe>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import axios from 'axios';
+import Recipe from '../components/Liste/Recipe.vue';
 
 export default {
   name: 'Liste',
   components: {
+    Recipe,
   },
   data() {
     return {
