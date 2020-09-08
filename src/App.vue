@@ -6,6 +6,14 @@
       <router-link to="/favoris">Favoris</router-link>
     </div>
     <router-view/>
+    <div class="footer">
+      <div id="nav">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/liste">Liste</router-link> |
+        <router-link to="/favoris">Favoris</router-link>
+      </div>
+      <p>© Maëlla Bennecer</p>
+    </div>
   </div>
 </template>
 <script>
@@ -33,6 +41,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  position: relative;
+  min-height: 100vh;
 }
 
 #nav {
@@ -46,5 +56,11 @@ export default {
       color: #42b983;
     }
   }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 </style>

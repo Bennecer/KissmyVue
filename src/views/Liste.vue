@@ -8,7 +8,7 @@
         </Recipe>
       </div>
     </div>
-    <button @click="loadMore" v-if="numberRecipes!==100"
+    <button @click="loadMore" v-if="numberRecipes!==100" style="margin-bottom: 140px;"
     type="button" class="btn btn-primary btn-lg mt-4">Charger de nouveaux éléments</button>
   </div>
 </template>

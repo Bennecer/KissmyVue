@@ -104,3 +104,6 @@ J'ai remarqué un autre problème lorsque je suis sur la page détails en venant
 
 #### **08/09/2020 - 17:04**
 Ok C'est corrigé, je passe à la page d'accueil.
+
+#### **08/09/2020 - 17:34**
+La page d'accueil et le footer ont été ajouté ! Je vais maintenant procéder au rendu. Je n'ai jamais essayé Docker mais je vais essayer.
