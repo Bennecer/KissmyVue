@@ -13,7 +13,6 @@ export default new Vuex.Store({
     },
     addRecipes(state, payload) {
       state.recipes = payload.payload;
-      console.log(state.recipes);
     },
   },
   getters: {

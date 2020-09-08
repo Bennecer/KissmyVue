@@ -34,7 +34,7 @@ export default {
       if (this.numberRecipes < this.maxRecipes) {
         this.numberRecipes += 10;
         axios
-          .get(`https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=${this.numberRecipes}&apiKey=e69a8c024cf84245b7ff80de5079c78d`)
+          .get(`https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=${this.numberRecipes}&apiKey=c39e878d83084f2784fd646d286bff52`)
           .then((response) => {
             const payload = response.data.results;
             this.recipes = payload;
@@ -45,7 +45,7 @@ export default {
   },
   mounted() {
     axios
-      .get('https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=10&apiKey=e69a8c024cf84245b7ff80de5079c78d')
+      .get('https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=10&apiKey=c39e878d83084f2784fd646d286bff52')
       .then((response) => {
         const payload = response.data.results;
         this.recipes = payload;

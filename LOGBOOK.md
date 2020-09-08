@@ -57,3 +57,33 @@ Le chargement de nouveaux éléments fonctionne. Par contre j'ai un problème de
 
 #### **08/09/2020 - 12:04**
 Le store fonctionne, j'arrive à stocker les recettes youpi ! Je peux me commander à manger hehe.
+
+#### **08/09/2020 - 12:41**
+Ma nourriture n'est toujours pas arrivée :'( Je continue en attendant. Avec la page Détails.
+
+#### **08/09/2020 - 12:53**
+Ma nourriture est arrivée ! Une pause s'impose.
+
+#### **08/09/2020 - 13:41**
+Je reprends ! 
+
+#### **08/09/2020 - 13:53**
+Je n'arrivais pas à passer une prop de la liste aux détails. C'est parce que j'avais oublié props: true dans le router...
+
+#### **08/09/2020 - 14:00**
+J'arrive à faire une nouvelle requête pour récupérer les détails de la recette (je dois faire un nouvel appel api pour cela). Comme prévu, au reload, j'ai une erreur car la prop n'est plus là. Donc je vais la stocker en localstorage.
+
+#### **08/09/2020 - 14:25**
+Ok Houston nous avons un problème... L'api limitait le nombre d'appels et j'ai dépassé le nombre autorisé :D Je vais essayer de générer une nouvelle clé... Croisez les doigts avec moi svp !
+
+#### **08/09/2020 - 14:28**
+Bon bon bon ça ne fonctionne pas ! Je vais devoir recréer un compte avec une autre adresse. I'll be back.
+
+#### **08/09/2020 - 14:31**
+OK C'EST BON
+
+#### **08/09/2020 - 14:44**
+Il y a une erreur qui me semble incohérente. Elle me dit que certaines informations dans la page détails sont undefined mais finalement elles sont bien affichées. Je penche pour un problème au niveau du lifecycle. Cette erreur ne m'empêche pas d'avancer donc je continue et j'essaierai de la résoudre à la fin.
+
+#### **08/09/2020 - 15:05**
+J'ai fini d'entrer les détails de recette que je souhaitais voir affichés. Maintenant je vais faire en sorte de pouvoir naviguer entre les recettes.
