@@ -98,3 +98,9 @@ La navigation fonctionne correctement. On peut naviguer de recette en recette et
 J'ai réussi à gérer l'ajout de favoris mais j'ai un bug qui persiste et je ne trouve pas de solution à ce problème. Lorsque je reviens sur la liste, la data isFavorite ne fonctionne pas correctement alors que je la track avec la console Vue et des console.log. Aussi, sur la page favoris, lorsque j'ai plusieurs favoris et que je retire un autre que le dernier, le favori suivant celui que j'ai enlevé a aussi un bug sur la data isFavorite. 
 Là je bloque vraiment... Je ne vais pas aller plus loin sur les favoris. Si j'avais des collègues avec moi j'aurais demandé de l'aide pour cela.
 Je vais maintenant passer à une présentation potable de la page d'accueil et je vais également créer un footer avant de rendre le test.
+
+#### **08/09/2020 - 16:56**
+J'ai remarqué un autre problème lorsque je suis sur la page détails en venant des favoris. Je règle ça.
+
+#### **08/09/2020 - 17:04**
+Ok C'est corrigé, je passe à la page d'accueil.

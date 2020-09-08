@@ -38,12 +38,14 @@ export default {
   name: 'Details',
   props: {
     recipe: Object,
+    isFavorite: Boolean,
   },
   components: {
   },
   data() {
     return {
       recipes: store.getters.getRecipes,
+      favorites: store.getters.getFavorites,
       recipeDetails: undefined,
       currentRecipe: undefined,
       isFirst: false,
@@ -63,23 +65,47 @@ export default {
     },
     refresh() {
       //  To set the arrows
-      const index = this.recipes.findIndex((obj) => obj.id === this.currentRecipe.id);
-      if (index === 0) this.isFirst = true;
-      else {
-        this.isFirst = false;
-        this.prevRecipe = this.recipes[index - 1];
+      if (!this.isFavorite) {
+        const index = this.recipes.findIndex((obj) => obj.id === this.currentRecipe.id);
+        if (index === 0) this.isFirst = true;
+        else {
+          this.isFirst = false;
+          this.prevRecipe = this.recipes[index - 1];
+        }
+        if (index === this.recipes.length - 1) this.isLast = true;
+        else {
+          this.isLast = false;
+          this.nextRecipe = this.recipes[index + 1];
+        }
+        const details = {
+          recipes: this.recipes,
+          favorites: this.favorites,
+          currentRecipe: this.currentRecipe,
+          isFavorite: this.isFavorite,
+        };
+        JSON.parse(localStorage.getItem('details'));
+        localStorage.setItem('details', JSON.stringify(details));
+      } else {
+        const index = this.favorites.findIndex((obj) => obj.id === this.currentRecipe.id);
+        if (index === 0) this.isFirst = true;
+        else {
+          this.isFirst = false;
+          this.prevRecipe = this.favorites[index - 1];
+        }
+        if (index === this.favorites.length - 1) this.isLast = true;
+        else {
+          this.isLast = false;
+          this.nextRecipe = this.favorites[index + 1];
+        }
+        const details = {
+          recipes: this.recipes,
+          favotites: this.favorites,
+          currentRecipe: this.currentRecipe,
+          isFavorite: this.isFavorite,
+        };
+        JSON.parse(localStorage.getItem('details'));
+        localStorage.setItem('details', JSON.stringify(details));
       }
-      if (index === this.recipes.length - 1) this.isLast = true;
-      else {
-        this.isLast = false;
-        this.nextRecipe = this.recipes[index + 1];
-      }
-      const details = {
-        recipes: this.recipes,
-        currentRecipe: this.currentRecipe,
-      };
-      JSON.parse(localStorage.getItem('details'));
-      localStorage.setItem('details', JSON.stringify(details));
     },
   },
   created() {
@@ -95,6 +121,8 @@ export default {
       const getDetails = JSON.parse(localStorage.getItem('details'));
       this.currentRecipe = getDetails.currentRecipe;
       this.recipes = getDetails.recipes;
+      this.isFavorite = getDetails.isFavorite;
+      this.favorites = getDetails.favorites;
     }
     axios
       .get(`https://api.spoonacular.com/recipes/${this.currentRecipe.id}/information?&apiKey=77b59e30cbfc48ee86936d91ffd0d2db`)

@@ -3,7 +3,7 @@
     <img class="card-img-top" :src="recipe.image" alt="">
     <div class="card-body">
       <h5 class="card-title">{{recipe.title}}</h5>
-      <router-link :to="{ name: 'Details', params: { recipe } }"
+      <router-link :to="{ name: 'Details', params: { recipe, isFavorite } }"
       class="btn btn-info">Plus de détails</router-link>
       <button @click="toggleFavorite"
         v-if="!isFavorite" class="btn btn-warning mt-2">Ajouter aux favoris</button>
